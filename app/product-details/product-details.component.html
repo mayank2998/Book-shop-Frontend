@@ -1,0 +1,40 @@
+<div class="container-fluid h-100">
+    <div class="row text-center text-white mb-5 mt-5">
+        <div class="col-lg-12  col-12 mt-5 d-flex justify-content-center">
+            <h1 class="display-4 text-success">Product List</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-12 align-items-center">
+            <ul class="list-group ml-5 mr-5 mb-3">
+                <li class="list-group-item mr-5 ml-5" *ngFor="let product of cartData">
+                    <div class="row">
+                        <div class="col-lg-3 d-flex flex-column justify-content-center">
+                            <img class="img-fluid align-items-center" src='{{product.img}}' alt="..." />
+                        </div>
+                        <div class="col-lg-7 d-flex flex-column justify-content-center align-items-center">
+                            <p><b>{{product.name}}</b></p>
+                            <p><b>Author : - </b>{{product.author}}</p>
+                            <p><b>Type : - </b>{{product.type}}</p>
+                            <p><b>Genre : - </b>{{product.category}}</p>
+                            <!-- <p><b>Description : -</b>{{product.description}}</p> -->
+                        </div>
+                        <div class="col-lg-2 d-flex align-items-center px-4">
+                            <p><b>${{product.price}}</b></p>
+                        </div>
+                        
+                    </div>
+                    
+                </li>
+                <li class="list-group-item mr-5 ml-5">
+                    <div class="d-flex flex-row justify-content-between row align-items-center">
+                        <button type="button" class="btn btn-primary col-xl-10 col-9 custom ml-3" [routerLink]="['/main']">Main Menu</button>
+                        <p class="col-xl-2"><b>Total :- </b>${{totalCost}}</p>
+                    </div>
+                </li>
+               
+            </ul>
+            
+        </div>
+    </div>
+</div>

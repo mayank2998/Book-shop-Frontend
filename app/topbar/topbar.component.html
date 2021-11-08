@@ -1,0 +1,55 @@
+<div class="container p-0">
+    <nav class="navbar navbar-expand navbar-dark bg-dark mb-3 pl-5 fixed-top">
+      <i class="fas fa-home fa-1x"></i>
+        <a class="navbar-brand ml-1" [routerLink] = "['/main']">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse d-flex flex-row ml-5 mr-0 row align-items-center" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto col-xl-9 col-9 row align-items-center">
+            
+            <form class="form-inline col-xl-10 col-10 row align-items-center" [formGroup]="searhForm" (ngSubmit)="submitdata()">
+              <div class="col-xl-10 col-10" >
+              <input class="form-control mr-sm-2 input-large" type="search" placeholder="Search by book name / Author " 
+              formControlName="searchval" aria-label="Search">
+              </div>
+              <button class="btn btn-outline-light my-2 my-sm-0 col-xl-2 col-2" type="submit" [disabled]="!isNavActive">Search</button>
+            </form>
+            <li class="nav-item dropdown col-xl-2 col-2 ml-4">
+              <a class="nav-link dropdown-toggle text-light" [ngClass]="isNavActive ? 'nav-link dropdown-toggle' : 'nav-link disabled'" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Genre
+              </a>
+              <div class="dropdown-menu dropdown-menu-right dropdown-menu-dark">
+                <button class="dropdown-item" type="button" (click)="setCategory('business')">Business</button>
+                <button class="dropdown-item" type="button" (click)="setCategory('cookbooks')">Cookbooks</button>
+                <button class="dropdown-item" type="button" (click)="setCategory('mystery')">Mystery</button>
+                <button class="dropdown-item" type="button" (click)="setCategory('scifi')">Scifi</button>
+                <button class="dropdown-item" type="button" (click)="setCategory('accessories')">Accessories</button>
+              </div>
+            </li>
+            
+          </ul>
+          <div class="d-flex flex-row align-items-center col-xl-3 col-3 row">
+            <form class="form-inline my-2 my-lg-0 col-xl-8 col-8 p-0 align-items-center">
+              <button class="btn btn-outline-dark btn-primary" type="submit" (click)="cart()" [disabled]="!isUserEmpty">
+                  <i class="bi-cart-fill me-1"></i>
+                  Cart
+                  <span class="badge bg-dark text-white ms-1 rounded-pill">{{totalItems}}</span>
+              </button>
+            </form>
+            <div class="dropdown col-xl-4 col-4 my-2 my-lg-0 p-0">
+              <a class="nav-link dropdown-toggle pl-0 text-light" [ngClass]="isUserEmpty ? 'nav-link dropdown-toggle' : 'nav-link disabled' "  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{userName}}
+              </a>
+              
+              <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                <li><a class="dropdown-item" (click)="logout()"><i class="fa fa-sign-out fa-1x" aria-hidden="true"></i>Log Out</a></li>
+                <li *ngIf="isAdmin=='true'"><a class="dropdown-item" (click)="totalSale()"><i class="fa fa-sign-out fa-1x" aria-hidden="true"></i>Total Sale</a></li>
+               
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>

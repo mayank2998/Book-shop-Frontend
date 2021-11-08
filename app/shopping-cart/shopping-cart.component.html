@@ -1,0 +1,125 @@
+<!-- <div class="container-fluid h-100">
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+  <h1 class="h1 mb-0 text-gray-800 text-center">SHOPPING CART</h1>
+  
+</div>
+
+      <div class="card shadow mb-4">
+          <div class="card-header py-3">
+              <h4 class="m-0 font-weight-bold text-primary">ITEMS</h4>
+          </div>
+
+          <div class="card-body">
+              <div class="table-responsive">
+                  <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                      <colgroup>
+                          <col class="col-md-2">
+                          <col class="col-md-2">
+                          <col class="col-md-7">
+                          <col class="col-md-1">
+                      </colgroup>
+                      <thead>
+                          <tr>
+                              <th>Name</th>
+                              <th>Image</th>
+                              <th >Author / Description</th>
+                              <th >Price</th>
+                          </tr>
+                      </thead>
+                      <tbody class="align-items-center">
+                          <tr *ngFor="let product of cartList">
+                              <td >{{product.name}}</td>
+                              <td ><img class="img-fluid" src='{{product.img}}' alt="..." /></td>
+                              <td><span>Author :- </span>{{product.author}}<br><span>Description :-</span>{{product.description}}</td>
+                              <td>${{product.price}}</td>
+                              
+                          </tr>
+                          <tr>
+                            <td colspan="4"><button type="button" class="btn btn-primary" (click)="checkOut()">Check Out</button></td>
+                        </tr>
+                          </tbody>
+
+                  </table>
+                  </div>
+      </div>
+    </div> -->
+      <div class="container-fluid h-100">
+        <div class="row text-center text-white mb-5 mt-5">
+            <div class="col-lg-12  col-12 mt-5 d-flex justify-content-center">
+                <h1 class="display-4 text-success">Product List</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-12 align-items-center">
+                <ul class="list-group ml-5 mr-5 mb-3">
+                    <li class="list-group-item mr-5 ml-5" *ngFor="let product of cartList">
+                        <div class="row">
+                            <div class="col-lg-3 d-flex flex-column justify-content-center">
+                                <img class="img-fluid align-items-center" src='{{product.img}}' alt="..." />
+                            </div>
+                            <div class="col-lg-6 d-flex flex-column justify-content-center align-items-center">
+                                <p><b>{{product.name}}</b></p>
+                                <p><b>Author : - </b>{{product.author}}</p>
+                                <p><b>Type : - </b>{{product.type}}</p>
+                                <p><b>Genre : - </b>{{product.category}}</p>
+                                <!-- <p><b>Description : -</b>{{product.description}}</p> -->
+                            </div>
+                            <div class="col-lg-2 d-flex align-items-center px-4">
+                                <p><b>${{product.price}}</b></p>
+                            </div>
+                            <div class="col-lg-1 d-flex align-items-center px-4">
+                                <i class="fa fa-trash fa-1x" (click)="removeItems(product.pid)"></i>
+                            </div>
+                        </div>
+                        
+                    </li>
+                    <li class="list-group-item mr-5 ml-5">
+                        <div class="d-flex flex-row justify-content-between row">
+                            <button type="button" class="btn btn-primary col-xl-9 custom ml-3" (click)="checkOut()" [disabled]="totalCost == 0">Checkout</button>
+                            <p class="col-xl-3"><b>Total :- </b>${{totalCost}}</p>
+                        </div>
+                    </li>
+                   
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="container-fluid py-5">
+        <div class="row text-center text-white mb-5">
+            <div class="col-lg-7 mx-auto">
+                <h1 class="display-4">Product List</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                
+                <ul class="list-group shadow">
+                  
+                    <li class="list-group-item" *ngFor="let product of cartList">
+                       
+                        <div class="media align-items-lg-center flex-column flex-lg-row p-3">
+                            <div class="media-body order-2 order-lg-1">
+                                <h5 class="mt-0 font-weight-bold mb-2">Apple iPhone XR (Red, 128 GB)</h5>
+                                <p class="font-italic text-muted mb-0 small">128 GB ROM | 15.49 cm (6.1 inch) Display 12MP Rear Camera | 7MP Front Camera A12 Bionic Chip Processor</p>
+                                <div class="d-flex align-items-center justify-content-between mt-1">
+                                    <h6 class="font-weight-bold my-2">₹64,999</h6>
+                                    <ul class="list-inline small">
+                                        <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                        <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                        <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                        <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                        <li class="list-inline-item m-0"><i class="fa fa-star-o text-gray"></i></li>
+                                    </ul>
+                                </div>
+                            </div><img src="https://i.imgur.com/KFojDGa.jpg" alt="Generic placeholder image" width="200" class="ml-lg-5 order-1 order-lg-2">
+                        </div> 
+                    </li> 
+                    
+                    
+                </ul> 
+            </div>
+        </div>
+    </div> -->
+    

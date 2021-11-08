@@ -1,0 +1,20 @@
+.img-fluid{
+    max-width: 100%;
+    max-height : auto;
+}
+body {
+    background: linear-gradient(to right, #c04848, #480048) !important;
+    min-height: 100vh
+}
+.custom {
+    width: 20vw !important;
+}
+.fa-trash {
+    color: black;
+  }
+  .fa-trash:hover{
+    color: red;
+  }
+  i{
+      cursor: pointer;
+  }

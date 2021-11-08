@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+.bg-light{
+    background-color : #0366fc
+}
+
+body {
+    /* background: linear-gradient(to right, #c04848, #480048); */
+    background: rgba(221, 216, 216, 0.555) !important; 
+    min-height: 100vh
+}

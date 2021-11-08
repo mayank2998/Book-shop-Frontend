@@ -1,0 +1,70 @@
+<!-- <section >
+    <div class="container-fluid px-4 px-lg-5 ">
+        <div class="row">
+            
+                <div class="col-sm-4 mb-5" *ngFor="let product of productList">
+                    <div class="card h-100">
+                   
+                        <img class="card-img-top img-fluid" src='{{product.img}}' alt="..." />
+                        
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                
+                                <h5 class="fw-bolder">{{product.name}}</h5>
+                            
+                                ${{product.price}}
+                            </div>
+                        </div>
+                       
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" (click)="incrementCart(product.pid)">Add to cart</a></div>
+                        </div>
+                    </div>
+                </div>
+            
+            
+        </div>
+    </div>
+</section> -->
+<main>
+    <div class="container-fluid bg-trasparent my-4 p-3" style="position: relative;">
+        <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3">
+            <div class="col" *ngFor="let product of productList">
+                <div class="card h-100 shadow-sm"><a (click)="getProductDesc(product.pid)"> <img src='{{product.img}}' class="card-img-top" data-toggle="modal" data-target="#exampleModalCenter" alt="..." ></a>
+                    <div class="card-body">
+                        <div class="clearfix mb-3"> <span class="float-start badge rounded-pill bg-success">${{product.price}}</span>  </div>
+                        <h6 class="card-title">{{product.name}}</h6>
+                        <h6 class="text-muted">{{product.type}},{{product.author}}</h6>
+                        <div class="text-center my-4"> <a class="btn btn-warning" (click)="incrementCart(product.pid)">Add to cart</a> </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</main>
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">{{descData.name}}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body d-flex flex-row row">
+            <div class="col-4">
+                <img src='{{descData.img}}' class="img-fluid">
+            </div>
+            <div class="col-8 d-flex flex-column justify-content-center">
+                <p><b>Author : - </b>{{descData.author}}</p>
+                <p><b>Description : - </b>{{descData.description}}</p>
+            </div>
+        </div>
+        <div class="modal-footer d-flex flex-row justify-content-between align-items-center pt-0">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <div class="clearfix mb-3 "> <span class="float-start badge rounded-pill bg-success">${{descData.price}}</span>  </div>
+        </div>
+      </div>
+    </div>
+  </div>

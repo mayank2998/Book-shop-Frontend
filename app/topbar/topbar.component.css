@@ -1,0 +1,16 @@
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+    background-color: #03c6fc;
+  }
+  /* You can add global styles to this file, and also import other style files */
+.bg-light{
+  background-color : #0366fc
+}
+.navbar-custom {
+  background-color: #4433cc;
+}
+
+.input-mysize { width: 150px }
+
+.fa-home {
+  color: white;
+}

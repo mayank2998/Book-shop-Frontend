@@ -1,0 +1,49 @@
+
+/* BASIC */
+
+.divider:after,
+.divider:before {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #eee;
+}
+.h-custom {
+  height: calc(100% - 73px);
+}
+@media (max-width: 100%) {
+  .h-custom {
+    height: 100%;
+  }
+}
+.has-success{
+    border-color : green;
+}
+.has-passworderror{
+  border-color: red;
+}
+.has-passwordsuccess{
+  border-color : green;
+}
+
+.has-cnfpassworderror{
+  border-color: red;
+}
+.has-cnfpasswordsuccess{
+  border-color : green;
+}
+
+.has-doberror{
+  border-color: red;
+}
+.has-dobsuccess{
+  border-color : green;
+}
+input[type="date"]:before {
+  content: attr(placeholder);
+}
+input[type="date"]:focus:before,
+input[type="date"]:not([value=""]):before
+{
+  display: none;
+}

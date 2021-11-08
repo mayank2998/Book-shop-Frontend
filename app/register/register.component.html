@@ -1,0 +1,103 @@
+<!-- <div class="wrapper fadeInDown">
+    <div id="formContent">
+     
+      <div [ngClass]="'fadeIn first'">
+        <img src="assets/icon2.svg" id="icon" alt="User Icon" />
+        <span class="material-icons-outlined">
+            manage_accounts
+            </span>
+        <i class="fas fa-user-graduate"></i>
+      </div>
+  
+      
+      <form [formGroup]="userForm" (ngSubmit)="submitdata()">
+        <input type="text" [ngClass]="{ 
+          'has-error':userForm.controls.emailId.touched && userForm.controls.emailId.invalid,
+          'has-success' : userForm.controls.emailId.touched && userForm.controls.emailId.valid
+      }" placeholder="Full Name" 
+        formControlName="name" class="form-control">
+        <input type="text" [ngClass]="{ 
+          'has-error':userForm.controls.emailId.touched && userForm.controls.emailId.invalid,
+          'has-success' : userForm.controls.emailId.touched && userForm.controls.emailId.valid
+      }" placeholder="login" 
+        formControlName="emailId" class="form-control">
+        <input type="password"  [ngClass]="{ 
+          'has-passworderror':userForm.controls.password.touched && userForm.controls.password.invalid,
+          'has-passwordsuccess' : userForm.controls.password.touched && userForm.controls.password.valid
+      }"  placeholder="password"
+        formControlName="password" class="form-control">
+        
+        <input type="date" [ngClass]="{ 
+          'has-doberror':userForm.controls.dob.touched && userForm.controls.dob.invalid,
+          'has-dobsuccess' : userForm.controls.dob.touched && userForm.controls.dob.valid
+      }" placeholder="login" 
+        formControlName="dob" class="form-control">
+        <br>
+        <span *ngIf="error" style="color:red;">Email Id Allready Exist</span><br>
+        <input type="submit" [ngClass]="'fadeIn fourth'" value="Register" [disabled]="
+        userForm.controls.dob.invalid || userForm.controls.name.invalid
+        || userForm.controls.password.invalid || userForm.controls.emailId.invalid
+        ">
+       
+      </form>
+  
+    
+      
+      
+  
+    </div>
+  </div> -->
+
+  <section class="vh-100">
+    <div class="container-fluid h-custom">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-md-9 col-lg-6 col-xl-5">
+          <img src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-login-form/draw2.png" class="img-fluid"
+            alt="Sample image">
+        </div>
+        <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+          <form [formGroup]="userForm" (ngSubmit)="submitdata()">
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <input type="text" [ngClass]="{ 
+                'has-error':userForm.controls.emailId.touched && userForm.controls.emailId.invalid,
+                'has-success' : userForm.controls.emailId.touched && userForm.controls.emailId.valid
+            }" placeholder="Full Name" 
+              formControlName="name" class="form-control">
+            </div>
+  
+            <!-- Password input -->
+            <div class="form-outline mb-3">
+              <input type="text" [ngClass]="{ 
+                'has-error':userForm.controls.emailId.touched && userForm.controls.emailId.invalid,
+                'has-success' : userForm.controls.emailId.touched && userForm.controls.emailId.valid
+            }" placeholder="Email Id" 
+              formControlName="emailId" class="form-control">
+            </div>
+            <div class="form-outline mb-3">
+              <input type="password"  [ngClass]="{ 
+                'has-passworderror':userForm.controls.password.touched && userForm.controls.password.invalid,
+                'has-passwordsuccess' : userForm.controls.password.touched && userForm.controls.password.valid
+            }"  placeholder="password"
+              formControlName="password" class="form-control">
+            </div>
+             <!-- Password input -->
+             <div class="form-outline mb-3">
+              <input type="text" id="my_element_id" placeholder="select a date" name="my_element_name" onfocus="(this.type='date')" [ngClass]="{ 
+                'has-doberror':userForm.controls.dob.touched && userForm.controls.dob.invalid,
+                'has-dobsuccess' : userForm.controls.dob.touched && userForm.controls.dob.valid
+            }" placeholder="D.O.B." 
+              formControlName="dob" class="form-control">
+            </div>
+            <div class="text-center text-lg-start mt-4 pt-2">
+              <button type="submit" class="btn btn-primary btn-lg"
+                style="padding-left: 2.5rem; padding-right: 2.5rem;" [disabled]="userForm.controls.password.invalid || userForm.controls.emailId.invalid">Register</button>
+              
+            </div>
+            <span *ngIf="error" style="color:red;">Email Id Allready Exist</span><br>
+          </form>
+        </div>
+      </div>
+    </div>
+    <app-footer></app-footer>
+  </section>
